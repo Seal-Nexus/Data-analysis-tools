@@ -1,0 +1,1 @@
+Hello, here is public resource folder, everything you put here, can be found as file.

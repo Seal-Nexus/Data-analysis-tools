@@ -1,0 +1,6 @@
+[submodule "simple-router"]
+	path = simple-router
+	url = https://github.com/ZoneTwelve/simple-router
+[submodule "public/Smooth.js"]
+	path = public/Smooth.js
+	url = https://github.com/osuushi/Smooth.js/
