@@ -117,11 +117,14 @@ function updateChart(){
 
 
   data.labels.shift();
-  spo2_data.shift();
   // remove the first ppg_data
   ppg_data.shift();
+  
   // remove the first heart_data
+  // for( let i = 0 ; i < 5 ; i++ ){
   heart_data.shift();
+  spo2_data.shift();
+  // }
 
   data.labels.push(data.labels.length);
   let _p = _ppg_data[p_index];
@@ -129,17 +132,22 @@ function updateChart(){
 
 
   if( h_index < _heart_data.length && dtot(_h.date.replace(/"/g, "")) <= dtot(_p.date.replace(/"/g, "").replace(/\.\d{3}/, "")) ){
-    heart_data.push( _heart_data[h_index].hr );
-    spo2_data.push( _heart_data[h_index].spo2 );
+    // for( let i = 0 ; i < 5 ; i++ ){
+      heart_data.push( _heart_data[h_index].hr );
+      spo2_data.push( _heart_data[h_index].spo2 );
+    // }
     h_index++;
   }else{
+    // for( let i = 0 ; i < 5 ; i++ ){
     spo2_data.push( null );
     heart_data.push( null );
+    // }
   }
   ppg_data.push( _p.value );
   p_index++;
 
   // pop 
+  document.querySelector("#time").innerText = _p.date;
   chart.update();
 
   let last_ppg = ppg[cur],
