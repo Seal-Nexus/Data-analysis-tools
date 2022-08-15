@@ -86,8 +86,8 @@ window.addEventListener("load", async () => {
   let canvas = document.getElementById("myChart")
   let ctx = canvas.getContext("2d");
 
-  heart = csv2data(await fetch( "data_A.csv" ).then( res => res.text() ));
-  ppg   = csv2data(await fetch( "c_data_b.csv" ).then( res => res.text() ));
+  heart = csv2data(await fetch( "../Data/Heart.csv" ).then( res => res.text() ));
+  ppg   = csv2data(await fetch( "../Data/PPG.csv" ).then( res => res.text() ));
   p_index = 0;
   h_index = 0;
   max = 120;
